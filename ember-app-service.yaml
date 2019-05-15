@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service              # 资源类型
+metadata:
+  name: ember-app-service
+spec:
+  type: LoadBalancer      
+  ports:
+  - port: 80           # service 监听端口
+    protocol: TCP      # 协议  
+    targetPort: 80     # 目标端口 
+  selector:                
+    app: ember-app     # label 定义的 service 根据 app: ember-app 这个 label 寻找 pod

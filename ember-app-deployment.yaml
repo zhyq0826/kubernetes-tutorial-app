@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment                                          # 资源类型
+metadata:
+  name: ember-app-deployment
+spec:
+  replicas: 2                                             # pod 副本数量
+  minReadySeconds: 15
+  strategy:
+    type: RollingUpdate                                   # 部署策略 滚动升级
+    rollingUpdate: 
+      maxUnavailable: 1                                   # 在升级过程中最多允许几个 pod 不可用
+      maxSurge: 1                                         # 升级过程中允许最多添加几个 pod, 如果 副本是 2 升级过程中要保证可用一直是 2 必须要再加一个 pod
+  template:                                               # 定义 deploy 使用 pod
+    metadata:
+      labels:
+        app: ember-app                                  #  模板定的 pod 的 label
+    spec:
+      containers:
+        - image: nginx:k8s
+          imagePullPolicy: Always                         # 镜像策略
+          name: ember-app
+          ports:
+            - containerPort: 80
