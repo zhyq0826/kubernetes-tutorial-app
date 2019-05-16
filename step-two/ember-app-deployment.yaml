@@ -13,10 +13,10 @@ spec:
   template:                                               # 定义 deploy 使用 pod
     metadata:
       labels:
-        app: ember-app                                  #  模板定的 pod 的 label
-    spec:
+        app: ember-app                                  #  模板定的 pod 的 label 根据这个 label 生成 service
+    spec:                                               # spec 相当于 step-one 中的 pod
       containers:
-        - image: nginx:k8s
+        - image: zhyq0826/nginx:k8s-step-one
           imagePullPolicy: Always                         # 镜像策略
           name: ember-app
           ports:
