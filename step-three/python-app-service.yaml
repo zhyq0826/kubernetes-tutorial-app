@@ -3,7 +3,7 @@ kind: Service              # 资源类型
 metadata:
   name: python-app-service
 spec:
-  type: ClusterIP      # service 类型 有 4 种类型 
+  type: NodePort      # service 类型 有 4 种类型 
   ports:
   - port: 5000           # service 监听端口
     protocol: TCP      # 协议  

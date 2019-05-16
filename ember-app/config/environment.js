@@ -3,7 +3,6 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-app',
-    backendHost: "http://localhost:5000",
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -46,7 +45,6 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.backendHost = "http://python-app.default.svc.cluster.local:5000";
   }
 
   return ENV;
