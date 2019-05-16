@@ -5,8 +5,8 @@ metadata:
 spec:
   type: ClusterIP      # service 类型 有 4 种类型 
   ports:
-  - port: 5000           # service 监听端口
+  - port: 6379           # service 监听端口
     protocol: TCP      # 协议  
-    targetPort: 5000     # 目标端口 
+    targetPort: 6379     # 目标端口 
   selector:                
     app: redis     # label 定义的 service 根据 app: python-app 这个 label 寻找 pod
