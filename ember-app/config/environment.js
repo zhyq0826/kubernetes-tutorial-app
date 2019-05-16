@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    backendport: 5000,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -45,6 +46,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.backendport = 32500
   }
 
   return ENV;

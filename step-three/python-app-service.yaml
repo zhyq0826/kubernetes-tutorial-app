@@ -5,8 +5,9 @@ metadata:
 spec:
   type: NodePort      # service 类型 有 4 种类型 
   ports:
-  - port: 5000           # service 监听端口
+  - port: 5000           # service 监听端口 集群内部访问
     protocol: TCP      # 协议  
-    targetPort: 5000     # 目标端口 
+    targetPort: 5000     # 目标端口
+    nodePort: 32500       # 暴露给外部访问  The range of valid ports is 30000-32767
   selector:                
     app: python-app     # label 定义的 service 根据 app: python-app 这个 label 寻找 pod
