@@ -46,7 +46,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.APP.backendHost = "http://python-app.default.svc.cluster.local:5000";
+    ENV.backendHost = "http://python-app.default.svc.cluster.local:5000";
   }
 
   return ENV;
