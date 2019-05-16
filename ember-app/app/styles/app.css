@@ -1,0 +1,9 @@
+body {
+    font-size: 18px;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    padding-top: 100px;
+}

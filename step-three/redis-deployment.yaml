@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment                                          # 资源类型
 metadata:
-  name: ember-app-deployment
+  name: redis-deployment
 spec:
-  replicas: 2                                             # pod 副本数量
+  replicas: 1                                             # pod 副本数量
   minReadySeconds: 15
   strategy:
     type: RollingUpdate                                   # 部署策略 滚动升级
@@ -13,11 +13,11 @@ spec:
   template:                                               # 定义 deploy 使用 pod
     metadata:
       labels:
-        app: ember-app                                  #  模板定的 pod 的 label 根据这个 label 生成 service
+        app: redis                                  #  模板定的 pod 的 label 根据这个 label 生成 service
     spec:                                               # spec 相当于 step-one 中的 pod
       containers:
-        - image: zhyq0826/nginx:k8s-ember-app
+        - image: redis:5.0.4
           imagePullPolicy: Always                         # 镜像策略
-          name: ember-app
+          name: redis
           ports:
-            - containerPort: 80
+            - containerPort: 6379                         # 一种显示的定义 和 dockerfile 中的 expose 相同

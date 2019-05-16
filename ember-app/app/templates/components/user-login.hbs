@@ -1,0 +1,10 @@
+<form class="pure-form">
+    {{input value=this.username placeholder="your name" }}
+    <button class="pure-button pure-button-primary" {{action "login"}}  >Sign in</button>
+    <p>
+        {{#if this.msg}}
+            {{this.msg}}
+        {{/if}}
+    </p>
+</form>
+

@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: python-app
+  name: python-app-deployment
 spec:
   replicas: 2
   minReadySeconds: 15
@@ -16,8 +16,11 @@ spec:
         app: python-app
     spec:
       containers:
-        - image: 
+        - image: zhyq0826/python:k8s-python-app
           imagePullPolicy: Always
-          name: sa-logic
+          name: python-app
           ports:
             - containerPort: 5000
+          env:
+            - name: REDIS_HOST
+              value: redis.default.svc.cluster.local

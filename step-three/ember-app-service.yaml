@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer      # service 类型 有 4 种类型 
   ports:
-  - port: 80           # service 监听端口 service 类型 是  loadBalance 会在 node 节点暴露一个 port 和 此处的 port 不同 随机的
+  - port: 80           # service 监听端口
     protocol: TCP      # 协议  
     targetPort: 80     # 目标端口 
   selector:                

@@ -6,7 +6,7 @@ metadata:
     app: ember-app                                  
 spec:                                                
   containers:
-    - image: zhyq0826/nginx:k8s-step-one    # 镜像名称                            
+    - image: zhyq0826/nginx:k8s-ember-app    # 镜像名称                            
       name: ember-app     # pod container 的名称            
       ports:
         - containerPort: 80   # 容器监控 port
