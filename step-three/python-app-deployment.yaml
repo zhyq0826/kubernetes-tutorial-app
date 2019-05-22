@@ -23,4 +23,4 @@ spec:
             - containerPort: 5000
           env:
             - name: REDIS_HOST
-              value: redis.default.svc.cluster.local
+              value: redis-service.default.svc.cluster.local   # 利用 k8s 提供的默认 dns 解析，发现 redis 服务
