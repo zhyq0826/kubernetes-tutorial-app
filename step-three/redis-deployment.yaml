@@ -1,10 +1,13 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment                                          # 资源类型
 metadata:
   name: redis-deployment
 spec:
   replicas: 1                                             # pod 副本数量
   minReadySeconds: 15
+  selector:
+    matchLabels:
+      app: redis
   strategy:
     type: RollingUpdate                                   # 部署策略 滚动升级
     rollingUpdate: 
